@@ -5,24 +5,23 @@ body {
     margin: 0;
 }
 
-header {
+nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 90px;
+    grid-template-rows: 85px;
     place-items: center;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
     position: relative;
 }
 
-header img {
+nav img {
     margin-left: 60px;
-    width: 37.5%;
+    max-width: 100%;
     height: auto;
 }
 
-
-header ul {
-    font-size: 12.5px;
+nav ul {
+    font-size: 0.78125em;
     font-weight: 500;
     list-style: none;
     padding: 0;
@@ -32,18 +31,195 @@ header ul {
     width: 56%;
 }
 
-header a {
+nav a {
     all: unset;
 }
 
-
-header ul li:nth-child(3) a {
+nav ul li:nth-child(3) a {
     font-weight: 600;
 }
 
-body #product_info {
+body>article:first-of-type {
     background-color: #F1F1F1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
 }
 
+#product_intro {
+    display: grid;
+    grid-template-columns: 44% 56%;
+}
+
+#product_intro *,
+header h1 {
+    padding: 0;
+    margin: 0;
+}
+
+#product_intro img {
+    margin-top: 26px;
+    width: 80%;
+    min-width: 350px;
+    height: auto;
+    margin-left: 127px;
+}
+
+@media (max-width: 974px) {
+    #product_intro {
+        grid-template-columns: 1fr;
+    }
+
+    #product_intro img {
+        margin-left: 0;
+    }
+}
+
+#product_intro div {
+    height: auto;
+    margin-left: 80px;
+    margin-top: 140px;
+}
+
+#product_intro div h1 {
+    font-size: clamp(2rem, 6.4vw, 5.88rem);
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+#product_intro div h1 span {
+    color: #AB303C;
+}
+
+#product_intro div p:nth-child(2) {
+    line-height: 1.3;
+    font-size: clamp(0.5rem, 7vw, 2.35em);
+    background: linear-gradient(to right, #111111, #B1B1B1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+#product_intro div p:nth-child(3) {
+    margin-bottom: 15px;
+}
+
+#product_intro button {
+    color: #F6F6F6;
+    width: 134px;
+    height: 36px;
+    font-weight: bold;
+    font-size: 0.9em;
+    background-color: #30AB4C;
+}
+
+header {
+    margin-top: 100px;
+}
+
+header h1 {
+    padding-left: 2px;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 500;
+    background: linear-gradient(to right, #111111, #B1B1B1, #696969, #B1B1B1);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 10px;
+}
+
+header hr {
+    width: 7%;
+}
+
+header:first-of-type {
+    margin-bottom: 130px;
+}
+
+#product_info {
+    margin: auto;
+    width: 82%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+#product_info section {
+
+    text-align: center;
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+#product_info section h1 {
+    padding: 0;
+    margin: 0;
+    font-size: 24.3px;
+    font-weight: 500;
+}
+
+.circle {
+    width: 35px;
+    height: 35px;
+    background-color: #FFFFFF;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 15.5px;
+    box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.25);
+}
+
+#product_info section:nth-last-child(2) ol {
+    padding: 0;
+    margin: 0;
+    width: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+}
+
+#product_info section:nth-last-child(2) li {
+    gap: 13px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+#product_info section h1 hr {
+    width: 25.5%;
+}
+
+#product_info section p {
+    font-size: 16px;
+    font-weight: 400;
+    width: 80%;
+}
+
+#product_info section img {
+    border-radius: 5px;
+    max-width: 100%;
+    height: auto;
+}
+
+#product_info section:nth-child(3) p {
+    margin-left: 58px;
+    width: 85.5%;
+}
+
+#product_info section:nth-child(1) h1 {
+    margin-right: 65.5px;
+}
+
+#product_info section:nth-child(2) h1 {
+    margin-left: 5.5px;
+}
+
+#product_info section:nth-child(3) h1 {
+    margin-left: 69px;
+}
