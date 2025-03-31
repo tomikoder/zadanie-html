@@ -166,7 +166,8 @@
           <p>
             Czarci pazur jest rośliną, która ma właściwości przeciwzapalne i
             przeciwbólowe. Może to pomóc zwierzętom, które doświadczają bólu i
-            stanu zapalnego związanego z problemami ze stawami.
+            stanu<br />
+            zapalnego związanego z problemami ze stawami.
           </p>
         </section>
         <section>
@@ -203,41 +204,36 @@
     </article>
     <article>
       <article id="products">
-        <div id="select_list_wraper">
-          <div id="select_list">
-            <p>liczba produktów na stronie</p>
-            <ul>
-              <li id="first_select_item">
-                <button class="button_style_1">
-                  10
-                  <img
-                    src="static/pics/icons8-expand-arrow-24.png"
-                    alt="Strzałka"
-                  />
-                </button>
-              </li>
-              <li class="list_item">
-                <button class="button_style_2">25</button>
-              </li>
-              <li class="list_item">
-                <button class="button_style_2">50</button>
-              </li>
-              <li class="list_item">
-                <button class="button_style_2">100</button>
-              </li>
-            </ul>
-          </div>
+        <div id="select_bar">
+          <p>liczba produktów na stronie</p>
+          <ul id="drop_down_list">
+            <li id="first_select_item">
+              <button class="menu_button button_style_1">
+                <span>25</span>
+                <img
+                  src="static/pics/icons8-expand-arrow-24.png"
+                  alt="Strzałka"
+                />
+              </button>
+            </li>
+            <li>
+              <button class="list_item button_style_2">
+                <span>25</span>
+              </button>
+            </li>
+            <li>
+              <button class="list_item button_style_2">
+                <span>50</span>
+              </button>
+            </li>
+            <li>
+              <button class="list_item button_style_2">
+                <span>100</span>
+              </button>
+            </li>
+          </ul>
         </div>
-        <div id="products_list">
-          <div><p>ID: 1</p></div>
-          <div><p>ID: 2</p></div>
-          <div><p>ID: 3</p></div>
-          <div><p>ID: 4</p></div>
-          <div><p>ID: 1</p></div>
-          <div><p>ID: 2</p></div>
-          <div><p>ID: 3</p></div>
-          <div><p>ID: 4</p></div>
-        </div>
+        <div id="products_list"></div>
       </article>
     </article>
     <script src="static/script/main.js"></script>
