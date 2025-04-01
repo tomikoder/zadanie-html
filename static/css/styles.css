@@ -59,7 +59,8 @@ header h1 {
 
 #product_intro img {
     margin-top: 26px;
-    width: 535px;
+    max-width: 535px;
+    width:  82%;
     height: auto;
     margin-left: 48px;
 }
@@ -72,6 +73,7 @@ header h1 {
 
 #product_intro div h1 {
     font-size: 5.88rem;
+    font-size: clamp(2.5rem, 6.25vw, 5.88rem);
     font-weight: 500;
     margin-bottom: 24px;
 }
@@ -82,7 +84,7 @@ header h1 {
 
 #product_intro div p:nth-child(2) {
     line-height: 1.3;
-    font-size: clamp(0.5rem, 7vw, 2.35em);
+    font-size: clamp(0.5rem, 5vw, 2.35em);
     background: linear-gradient(to right, #111111, #B1B1B1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -124,12 +126,24 @@ header h1 {
         text-align: center;
         margin-bottom: 50px;
     }
+
+    nav {
+        grid-template-columns: 1fr;
+    }
+        
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav img {
+        margin-left: 0;
+    }
 }
 
 header h1:first-child {
     padding-left: 2px;
     text-align: center;
-    font-size: 38px;
+    font-size: clamp(0.5rem, 5vw, 2.35em);
     font-weight: 500;
     background: linear-gradient(to right, #111111, #B1B1B1, #696969, #B1B1B1);
     background-clip: border-box;
@@ -143,7 +157,7 @@ header hr {
 }
 
 header:first-of-type {
-    margin-bottom: 130px;
+    margin-bottom: 6.5vw;
 }
 
 #product_info {
@@ -329,7 +343,7 @@ body > article:nth-of-type(2) header h1:nth-child(3) {
     margin: auto;
     display: grid;
     grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1.32fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     text-align: center;
 }
@@ -340,15 +354,14 @@ body > article:nth-of-type(2) header h1:nth-child(3) {
 }
 
 #product_ingredients section:nth-child(-n+3) {
-    margin-right: 20px;
+    margin-right: 29px;
 }
 
 #product_ingredients section:nth-last-child(-n+3) {
-    margin-left: 6px;
 }
 
 #product_ingredients section:nth-child(-n+3) p:nth-child(3) {
-    margin-right: 7px;
+    margin-right: 10px;
 }
 
 
@@ -358,9 +371,11 @@ body > article:nth-of-type(2) header h1:nth-child(3) {
 }
 
 #product_ingredients img {
-    max-width: 476px;
+    margin-left: 30px;
+    max-width: 474px;
+    min-width: 323px;
+    width: 31.5vw;
     height: auto;
-    margin-left: 36px;
 }
 
 #product_ingredients p {
@@ -385,12 +400,14 @@ body > article:nth-of-type(2) header h1:nth-child(3) {
 }
 
 #product_ingredients .buy {
+    transform: translateY(-7vw);
     background-color: #AD4844;
 }
 
 body > article:nth-of-type(2) > img {
     display: block;
-    max-width: 752px;
+    max-width: 49%;
+    min-width: 400px;
     height: auto;
     margin: 0 auto;
     margin-top: 20px;
@@ -422,7 +439,7 @@ body > article:nth-of-type(2) > img {
     
     #product_ingredients div {
         grid-column: 1;
-        grid-row: 1 / span 3;
+        grid-row: 1 / span 2;
     }
 
     #product_ingredients .buy {
