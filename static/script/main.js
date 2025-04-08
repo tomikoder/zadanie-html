@@ -2,6 +2,7 @@ const first_select_item = document.getElementById("first_select_item");
 const drop_down_list = document.getElementById("drop_down_list");
 const menu_items = document.querySelectorAll(".list_item");
 const products_list = document.getElementById("products_list");
+
 let open_menu = false;
 let is_downloaded = false;
 let downloaded_prdoucts;
@@ -27,10 +28,18 @@ async function download_products() {
 function get_product(downloaded_prdoucts) {
   let curr_product = downloaded_prdoucts.shift();
   let curr_product_div = document.createElement("div");
+
+  curr_product_div.classList.add("product_item");
   let p_tag = document.createElement("p");
   let id = curr_product["id"];
   p_tag.textContent = "ID: " + id;
+  span_tag1 = document.createElement("span");
+  span_tag2 = document.createElement("span");
+  span_tag1.textContent = curr_product["id"];
+  span_tag2.textContent = curr_product["text"];
   curr_product_div.appendChild(p_tag);
+  curr_product_div.appendChild(span_tag1);
+  curr_product_div.appendChild(span_tag2);
   curr_number_of_products_to_display++;
   return curr_product_div;
 }
@@ -92,7 +101,7 @@ window.addEventListener("scroll", function () {
     const maxScroll =
       document.documentElement.scrollHeight - window.innerHeight;
 
-    if (scrollPosition + 10 >= maxScroll) {
+    if (scrollPosition >= maxScroll - window.innerHeight * 0.5) {
       if (!is_downloaded) {
         downloaded_prdoucts = await download_products();
         is_downloaded = true;
