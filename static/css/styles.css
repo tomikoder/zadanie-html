@@ -36,8 +36,60 @@ nav a {
     all: unset;
 }
 
+nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 9px;
+}
+
+
+
 nav ul li:nth-child(3) a {
     font-weight: 600;
+}
+
+#mobile_menu_button {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    nav {
+        grid-template-columns: 1fr;
+    }
+    
+    nav ul {
+        justify-content: center;
+    }
+    
+    nav img {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 322px) {
+    nav {
+        place-items: normal;
+        grid-template-columns: 1fr 1fr;
+        background-color: #F1F1F1;
+        box-shadow: none;
+    }
+
+    nav img:first-of-type {
+        justify-self: flex-start;
+        max-width: 95px;
+        height: auto;
+        padding: 15px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    #mobile_menu_button {
+        padding: 15px;
+        justify-self: flex-end;
+        display: block;
+        z-index: 2;
+    }
 }
 
 body > article:first-of-type {
@@ -94,7 +146,7 @@ header h1,
 
 #product_intro div div p:nth-child(1) {
     line-height: 1.3;
-    font-size: clamp(0.5rem, 5vw, 2.35em);
+    font-size: clamp(18px, 5vw, 2.35em);
     background: linear-gradient(to right, #111111, #B1B1B1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -136,17 +188,21 @@ header h1,
         text-align: center;
         margin-bottom: 50px;
     }
+}
 
-    nav {
-        grid-template-columns: 1fr;
-    }
-        
-    nav ul {
-        justify-content: center;
-    }
+@media (max-width: 322px) {
+    #product_intro button, 
+    #product_intro div h1 {
+        display: none;
+    } 
     
-    nav img {
-        margin-left: 0;
+    #product_intro img {
+        width: 283px;
+        height: auto;
+    }
+
+    #product_intro div {
+        margin-top: 15px;
     }
 }
 
@@ -200,8 +256,6 @@ header:first-of-type {
     margin-top: 15px;
 }
 
-
-
 #product_info section > h1 {
     padding: 0;
     margin: 0;
@@ -230,7 +284,7 @@ header:first-of-type {
     margin-right: 85px;
 }
 
-#product_info section:nth-child(2) ol, #product_info section:nth-child(4) ol {
+#product_info ol, body > article:nth-of-type(2) ol {
     display: grid;
     grid-auto-flow: row;
     justify-items: center;
@@ -240,40 +294,40 @@ header:first-of-type {
     list-style: none;   
 }
 
-#product_info section:nth-child(2) ol {
+#product_info ol {
     grid-template-rows: 60px 60px;
 }
 
-#product_info section:nth-child(4) ol {
+body>article:nth-of-type(2) ol {
     margin-top: 49px;
     grid-template-rows: 60px 60px 60px 65px 65px 62px 1fr;
     justify-items: start;
     row-gap: 9px;
 }
 
-#product_info section:nth-child(2) ol li,
-#product_info section:nth-child(4) ol li {
+#product_info ol li,
+body > article:nth-of-type(2) ol li {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-#product_info section:nth-child(2) ol li {
+#product_info ol li {
     margin-right: 5px;
     gap: 15px;
     width: 70%;
 }
 
-#product_info section:nth-child(4) ol li:nth-child(4) {
+body > article:nth-of-type(2) ol li:nth-child(4) {
     margin-bottom: 4px;
 }
 
-#product_info section:nth-child(4) ol li:nth-child(5) {
+body > article:nth-of-type(2) ol li:nth-child(5) {
     margin-bottom: 11px;
 }
 
-#product_info section:nth-child(4) ol li:nth-child(6),
-#product_info section:nth-child(4) ol li:nth-child(7) {
+body > article:nth-of-type(2) ol li:nth-child(6),
+body > article:nth-of-type(2) ol li:nth-child(7) {
     margin-bottom: auto;
 }
 
@@ -291,11 +345,6 @@ header:first-of-type {
 #product_info section img {
     max-height: 227px;
     width: auto;
-}
-
-#product_info section:nth-child(4) {
-    background-color: white;
-    display: none;
 }
 
 #product_info section:nth-child(1) div {
@@ -375,13 +424,12 @@ header:first-of-type {
 }
 
 @media (max-width: 322px) {
-
     #product_info section {
             text-align: center;
             display: grid;
             grid-auto-flow: row;
             grid-template-columns: 1fr;
-            grid-template-rows: 84px 138px 320px;
+            grid-template-rows: 83.5px 139px 330px;
     }
 
     #product_info {
@@ -403,26 +451,27 @@ header:first-of-type {
         width: 40%;
     }
 
-    #product_info section:nth-child(2) ol .circle_one {
+    #product_info ol .circle_one {
         margin-left:40px;
     }
 
-    #product_info section:nth-child(4) ol .circle_one {
+    body > article:nth-of-type(2) ol .circle_one {
         margin-left: 18px;
     }
 
-    #product_info section ol {
+    #product_info ol, 
+    body > article:nth-of-type(2) ol {
         font-weight: 100;
         font-size: 13px;
     }
 
-    #product_info section:nth-child(2) ol {
+    #product_info ol {
         margin-top: 5px;
         margin-right: 30px;
         row-gap: 10px;
     }
 
-    #product_info section:nth-child(2) ol li {
+    #product_info ol li {
         margin-top: 3px;
         width: 100%;
         flex-wrap: nowrap;
@@ -430,19 +479,24 @@ header:first-of-type {
         gap: 21px
     }
 
-    #product_info section:nth-child(4) ol li {
+    body > article:nth-of-type(2) ol li {
         gap: 24px;
     }
      
     body > article:first-of-type {
-        padding-bottom: 20px;
+        padding-bottom: 35px;
+    }
+
+    #product_info section p, #product_intro div div p:nth-child(2) {
+        margin: 0 auto;
+        font-size: 13px;
+        font-weight: 300;
+        width: 88%;
     }
 
     #product_info section p {
         margin-top: 19px;
         margin-bottom: 12px;
-        font-size: 13px;
-        font-weight: 300;
         width: 88%;
     }
     
@@ -451,8 +505,7 @@ header:first-of-type {
     }
 
     #product_info {
-        row-gap: 54px;
-        margin-bottom: -54px;
+        row-gap: 45.5px;
     }
 
     #product_info section img {
@@ -496,13 +549,44 @@ header:first-of-type {
     #product_info section > div {
         margin-top: 8.5px;
     }
+    
+    body > article:nth-of-type(1) header {
+        margin-bottom: 60px;
+    }
 }
 
-body > article:nth-of-type(2) header {
+body > article:nth-of-type(2) {
+    display: none;
+}
+
+body > article:nth-of-type(2) > header {
+    margin-top: 69px;
+}
+
+body > article:nth-of-type(2) ol {
+    margin-bottom: 28px;
+}
+
+body > article:nth-of-type(2) hr:nth-child(3) {
+    margin-bottom: 30px;
+    height: 18px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: #F1F1F1;
+}
+
+@media (max-width: 322px) {
+    body > article:nth-of-type(2) {
+        display: block;
+    }
+}
+
+body > article:nth-of-type(3) header {
     margin-top: 40px;
 }
 
-body > article:nth-of-type(2) header h1:nth-child(3) {
+body > article:nth-of-type(3) header h1:nth-child(3) {
     margin-top: 5vw;
     font-weight: 400;
     font-size: clamp(16px, 1.62vw, 2.5vw);
@@ -624,7 +708,7 @@ body > article:nth-of-type(2) header h1:nth-child(3) {
     background-color: #AD4844;
 }
 
-body > article:nth-of-type(2) > img {
+body > article:nth-of-type(3) > img {
     display: block;
     max-width: 49%;
     min-width: 450px;
@@ -655,7 +739,7 @@ body > article:nth-of-type(2) > img {
 }
 
 @media (max-width: 620px) {
-    body > article:nth-of-type(2) {
+    body > article:nth-of-type(3) {
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -680,9 +764,6 @@ body > article:nth-of-type(2) > img {
 }
 
 @media (max-width: 321px) {
-    body > article:nth-of-type(2) {
-        padding: 30;
-    }
     #product_ingredients {
         grid-template-areas: "siarcz_gluko"
                              "czarci_paz"
@@ -724,7 +805,7 @@ body > article:nth-of-type(2) > img {
         display: block;
     }
 
-    body > article:nth-of-type(2) > img {
+    body > article:nth-of-type(3) > img {
         transform: translateX(-63px);
     }
 
@@ -732,22 +813,22 @@ body > article:nth-of-type(2) > img {
         font-size: 13px;
     }
 
-    body > article:nth-of-type(2) header hr {
+    body > article:nth-of-type(3) header hr {
         width: 45%;
     }
 
-    body > article:nth-of-type(2) header {
+    body > article:nth-of-type(3) header {
         margin-top: 70px;
     }
 
-    body > article:nth-of-type(2) header h1:nth-child(3) {
+    body > article:nth-of-type(3) header h1:nth-child(3) {
         margin-top: 45px;
         margin-bottom: 12px;
         font-size: 13px;
     }
 }
 
-body > article:nth-of-type(3) {
+body > article:nth-of-type(4) {
     padding-top: 90px;
     background-color: #F1F1F1;
     min-height: 200px;

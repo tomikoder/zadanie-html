@@ -11,10 +11,15 @@
     <nav>
       <img src="static/pics/Arthrohard.png" alt="Arthrohard" />
       <ul>
-        <li><a href="">CO NAS WYRÓŻNIA</a></li>
-        <li><a href="">SKŁAD</a></li>
-        <li><a href="">PRODUKTY</a></li>
+        <li><a href="#co_nas_wyroznia">CO NAS WYRÓŻNIA</a></li>
+        <li><a href="#sklad">SKŁAD</a></li>
+        <li><a href="#products">PRODUKTY</a></li>
       </ul>
+      <img
+        id="mobile_menu_button"
+        src="static/pics/mobile/Vector_menu.png"
+        alt="Przycisk do rozwijania menu"
+      />
     </nav>
     <article>
       <article id="product_intro">
@@ -23,10 +28,12 @@
           <h1>ARTHRO<span>HARD</span></h1>
           <div>
             <p>
-              Lab-V Arthrohard Preparat<br class="normal_new_line" />
+              Lab-V Arthrohard Preparat<br
+                class="normal_new_line mobile_new_line"
+              />
               na wsparcie stawów dla psa i kota
             </p>
-            <p>
+            <p id="zalecenia">
               Arthrohard to dobrze przyswajalny suplement diety w formie
               syropu,<br class="normal_new_line" />
               stworzony z myślą o zdrowiu stawów Twojego psa lub kota.
@@ -35,7 +42,7 @@
           </div>
         </div>
       </article>
-      <header>
+      <header id="co_nas_wyroznia">
         <h1>Co wyróżnia nasz preparat</h1>
         <hr />
       </header>
@@ -115,7 +122,7 @@
             </picture>
           </div>
         </section>
-        <section>
+        <section id="dawkowanie">
           <h1>
             Skuteczność -<br />
             skoncentrowana dawka
@@ -149,47 +156,50 @@
             </picture>
           </div>
         </section>
-        <section>
-          <header>
-            <h1>Działanie preparatu</h1>
-            <hr />
-          </header>
-          <ol>
-            <li>
-              <div class="circle_one">1</div>
-              Wsparcie rozwoju chrząstki stawowej
-            </li>
-            <li>
-              <div class="circle_one">2</div>
-              Działanie chondro protekcyjne
-            </li>
-            <li>
-              <div class="circle_one">3</div>
-              Zmniejszenie stanu zapalnego i bólu
-            </li>
-            <li>
-              <div class="circle_one">4</div>
-              Wzmocnienie stawów
-            </li>
-            <li>
-              <div class="circle_one">5</div>
-              Ochrona przed mikrourazami
-            </li>
-            <li>
-              <div class="circle_one">6</div>
-              Regeneracja po urazach<br />
-              i zabiegach ortopedycznych
-            </li>
-            <li>
-              <div class="circle_one">7</div>
-              Poprawa jakości życia
-            </li>
-          </ol>
-        </section>
       </article>
     </article>
-    <article>
+    <article id="dzialanie_preparatu">
       <header>
+        <h1>Działanie preparatu</h1>
+        <hr />
+      </header>
+      <section>
+        <ol>
+          <li>
+            <div class="circle_one">1</div>
+            Wsparcie rozwoju chrząstki stawowej
+          </li>
+          <li>
+            <div class="circle_one">2</div>
+            Działanie chondro protekcyjne
+          </li>
+          <li>
+            <div class="circle_one">3</div>
+            Zmniejszenie stanu zapalnego i bólu
+          </li>
+          <li>
+            <div class="circle_one">4</div>
+            Wzmocnienie stawów
+          </li>
+          <li>
+            <div class="circle_one">5</div>
+            Ochrona przed mikrourazami
+          </li>
+          <li>
+            <div class="circle_one">6</div>
+            Regeneracja po urazach<br />
+            i zabiegach ortopedycznych
+          </li>
+          <li>
+            <div class="circle_one">7</div>
+            Poprawa jakości życia
+          </li>
+        </ol>
+      </section>
+      <hr />
+    </article>
+    <article>
+      <header id="sklad">
         <h1>Skład w 5 ml</h1>
         <hr />
         <h1>Co dają poszczególne składniki:</h1>
@@ -374,13 +384,24 @@
       </article>
     </article>
     <div id="product_modal" class="modal">
-      <div class="modal-content">
+      <div>
         <div>
           <p id="modal_product_id"></p>
           <span class="close">X</span>
         </div>
         <p>Nazwa:</p>
         <p id="modal_product_text"></p>
+      </div>
+    </div>
+    <div id="mobile_menu_modal" class="modal">
+      <div>
+        <ul>
+          <li><a href="#dzialanie_preparatu">DZIAŁANIE PREPARATU</a></li>
+          <li><a href="#zalecenia">ZALECENIA</a></li>
+          <li><a href="#sklad">SKŁAD</a></li>
+          <li><a href="#dawkowanie">DAWKOWANIE</a></li>
+          <li><a href="">OPINIE</a></li>
+        </ul>
       </div>
     </div>
     <script src="static/script/main.js"></script>
