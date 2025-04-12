@@ -1127,6 +1127,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     body > div:first-of-type > div {
+        overflow: hidden;
         margin-right: 0;
     }
 }
@@ -1150,8 +1151,9 @@ body > article:nth-of-type(4) {
 }
 
 #select_bar {
+    margin-left: 6px;
     display: flex;
-    width: 288px;
+    width: 289px;
     align-items: center;
     justify-content: space-between;
     border: solid #AD4844 1px;
@@ -1160,16 +1162,18 @@ body > article:nth-of-type(4) {
 }
 
 #select_bar {
+    height: 37px;
     background-color:white;
 }
 
 #select_bar p {
-    padding-left: 5px;
+    padding-left: 7px;
 }
 
 #select_bar,  #drop_down_list button {
-    height: 37px;
+    box-sizing: border-box;
 }
+
 
 #select_bar img {
     width: 15px;
@@ -1178,7 +1182,7 @@ body > article:nth-of-type(4) {
 
 #drop_down_list {
     display: flex;
-    width: 98px;
+    width: 99px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -1186,7 +1190,7 @@ body > article:nth-of-type(4) {
     flex-direction: column;
     align-items: center;
     top: 0;
-    left: 191px;
+    left: 189px;
     font-weight: 600;
 }
 
@@ -1195,14 +1199,11 @@ body > article:nth-of-type(4) {
 }
 
 #drop_down_list button {
+    height: 36px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-}
-
-#first_select_item {
-    border-top: 1px #AD4844 solid;
 }
 
 .button_style_1,
@@ -1277,8 +1278,9 @@ body > article:nth-of-type(4) {
     #products_list {
         width: 100%;
         justify-content: space-between;
-        grid-template-columns: repeat(2, minmax(104px, 140px));;
-        grid-auto-rows: minmax(104px, 140px);
+        grid-template-columns: repeat(2, minmax(101px, 140px));;
+        grid-auto-rows: minmax(101px, 140px);
+        column-gap: 47px
     }
     
     .product_item {
@@ -1286,9 +1288,12 @@ body > article:nth-of-type(4) {
     } 
 
     #select_bar {
-        width: 99%;
+        margin-left: 0;
+        width: 100%;
         margin-bottom: 77px;
         border: solid #AD4844 2px;
+        justify-content: center;
+        align-items: center;
     }
 
     #select_bar, #drop_down_list button {
@@ -1301,15 +1306,14 @@ body > article:nth-of-type(4) {
 
     #select_bar p {
         padding-right: 10px;
-        padding-top: 10px;
+        padding-top: 11px;
         padding-bottom: 15px;
-        transform: translate(12px, 2px);
         margin: 0;
     }
 
     #drop_down_list {
         font-weight: 900;
-        transform: translate(-1.5px, 45px);
+        transform: translate(-1.5px, 42px);
         left: 0;
         width: calc(100% + 3px);;
     }
