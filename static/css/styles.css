@@ -23,7 +23,7 @@ nav img {
 }
 
 nav ul {
-    font-size: 0.78125em;
+    font-size: 12.5px;
     font-weight: 500;
     list-style: none;
     padding: 0;
@@ -67,7 +67,7 @@ nav ul li:nth-child(3) a {
     }
 }
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     nav {
         place-items: normal;
         grid-template-columns: 1fr 1fr;
@@ -151,7 +151,7 @@ header h1,
 }
 
 #product_intro > div:nth-child(2) h1 {
-    font-size: clamp(2.5rem, 6.25vw, 5.88rem);
+    font-size: clamp(40px, 6.25vw, 6.25vw);
     font-weight: 500;
     margin-bottom: 24px;
     margin-left: 9px;
@@ -167,7 +167,7 @@ header h1,
 
 #product_intro > div:nth-child(2) div p:nth-child(1) {
     line-height: 1.3;
-    font-size: clamp(20px, 5vw, 2.35em);
+    font-size: clamp(20px, 5vw, 37.6px);
     background: linear-gradient(to right, #111111, #B1B1B1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -201,7 +201,7 @@ header h1,
     width: 134px;
     height: 36px;
     font-weight: bold;
-    font-size: 0.9em;
+    font-size: 14.4px;
     background-color: #30AB4C;
 }
 
@@ -229,7 +229,7 @@ header h1,
     }
 }
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     #product_intro button, 
     #product_intro > div:nth-child(2) h1 {
         display: none;
@@ -260,7 +260,7 @@ header h1,
 
     #product_intro > .vector:first-of-type {
         width: 20%;
-        top: 19%;
+        top: 15%;
         left: 0;
     }
     #product_intro>.vector:last-of-type {
@@ -278,7 +278,7 @@ header {
 
 header h1:first-child {
     text-align: center;
-    font-size: clamp(1.3em, 2.5vw, 2.6vw);
+    font-size: clamp(20.8px, 2.5vw, 2.6vw);
     font-weight: 500;
     background: linear-gradient(to right, #111111, #B1B1B1, #696969, #B1B1B1);
     -webkit-background-clip: text;
@@ -396,6 +396,7 @@ header:first-of-type {
     margin: 0;
     width: auto;
     list-style: none;   
+    margin-left: 8px;
 }
 
 #product_info ol {
@@ -529,15 +530,50 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
     #product_info {
         grid-template-columns: 1fr;
     }
+
+    #product_info section:nth-child(1) img.vector:nth-of-type(1) {
+        left: 25%;
+        top: 55%;
+        width: 10%;
+    }
+
+    #product_info section:nth-child(1) img.vector:nth-of-type(2) {
+        right: 25%;
+        top: 55%;
+        width: 10%;
+    }
+
+    #product_info section:nth-child(2) img.vector:nth-of-type(1) {
+        left: 25%;
+        top: 55%;
+        width: 10%;
+    }
+
+    #product_info section:nth-child(2) img.vector:nth-of-type(2) {
+        right: 25%;
+        top: 55%;
+        width: 10%;
+    }
+
+    #product_info section:nth-child(3) img.vector:nth-of-type(1) {
+        display: none;
+    }
+
+    #product_info section:nth-child(3) img.vector:nth-of-type(2) {
+        right: 25%;
+        top: 55%;
+        width: 10%;
+    }
+
 }
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     #product_info section {
-            text-align: center;
-            display: grid;
-            grid-auto-flow: row;
-            grid-template-columns: 1fr;
-            grid-template-rows: 83.5px 139px 330px;
+        text-align: center;
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+        grid-template-rows: 83.5px 139px 330px;
     }
 
     #product_info {
@@ -703,7 +739,7 @@ body > article:nth-of-type(2) hr:nth-child(3) {
     background-color: #F1F1F1;
 }
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     body > article:nth-of-type(2) {
         display: block;
     }
@@ -928,13 +964,13 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         margin-bottom: 30px;
     }
 
-    #product_ingredients div:nth-child(4) img.vector:nth-child(1) {
-        left: 20%;
+    #product_ingredients div:nth-child(4) img.vector:nth-of-type(1) {
+        left: 22%;
         width: 22%;
     }
 
-    #product_ingredients div:nth-child(4) img.vector:nth-child(2) {
-        right: 25%;
+    #product_ingredients div:nth-child(4) img.vector:nth-of-type(2) {
+        right: 26%;
         width: 22%;
     }
 }
@@ -964,7 +1000,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 }
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     #product_ingredients {
         grid-template-areas: "siarcz_gluko"
                              "czarci_paz"
@@ -1132,6 +1168,13 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 }
 
+@media (min-width: 371px) {
+    body > div:first-of-type > div {
+        overflow : visible;
+    }
+}
+
+
 body > article:nth-of-type(4) {
     z-index: 2;
     position: relative;
@@ -1151,7 +1194,6 @@ body > article:nth-of-type(4) {
 }
 
 #select_bar {
-    margin-left: 6px;
     display: flex;
     width: 289px;
     align-items: center;
@@ -1159,12 +1201,11 @@ body > article:nth-of-type(4) {
     border: solid #AD4844 1px;
     margin-bottom: 100px;
     position: relative;
+    height: 37px;
+    background-color: white;
+    margin-right: 4px;
 }
 
-#select_bar {
-    height: 37px;
-    background-color:white;
-}
 
 #select_bar p {
     padding-left: 7px;
@@ -1182,7 +1223,7 @@ body > article:nth-of-type(4) {
 
 #drop_down_list {
     display: flex;
-    width: 99px;
+    width: 101px;
     padding: 0;
     margin: 0;
     list-style: none;
@@ -1190,7 +1231,7 @@ body > article:nth-of-type(4) {
     flex-direction: column;
     align-items: center;
     top: 0;
-    left: 189px;
+    left: 188px;
     font-weight: 600;
 }
 
@@ -1264,7 +1305,7 @@ body > article:nth-of-type(4) {
 }
 
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     #product_ingredients > div:nth-child(4) button{
         display: none;
     }
@@ -1288,7 +1329,7 @@ body > article:nth-of-type(4) {
     } 
 
     #select_bar {
-        margin-left: 0;
+        margin-right: 0;
         width: 100%;
         margin-bottom: 77px;
         border: solid #AD4844 2px;
@@ -1351,7 +1392,7 @@ body > article:nth-of-type(4) {
     display: block;
 }
 
-@media (min-width: 320px) and (max-width: 414px) {
+@media (min-width: 320px) and (max-width: 415px) {
     .normal_new_line,
     .normal_vector {
         display: none;

@@ -61,12 +61,12 @@
     -webkit-tap-highlight-color: transparent;
 }
 
-#mobile_menu_modal li:active {
+#mobile_menu_modal li a:hover {
     color: #FFFFFF;
     text-decoration: underline;
 }
 
-@media (max-width: 321px) {
+@media (min-width: 320px) and (max-width: 415px) {
     #product_modal > div:first-child {
         margin: 90% auto;
     }
@@ -95,4 +95,8 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.show {
+    display: block;
 }

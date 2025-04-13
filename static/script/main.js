@@ -4,11 +4,12 @@ const menu_items = document.querySelectorAll(".list_item");
 const products_list = document.getElementById("products_list");
 
 let open_menu = false;
-let is_downloaded = false;
 let downloaded_prdoucts;
-let number_of_products_to_display =
-  first_select_item.children[0].children[0].textContent;
-let curr_number_of_products_to_display = 0;
+let number_of_products_to_display = Number(
+  first_select_item.children[0].children[0].textContent.trim()
+);
+
+let curr_product_index = 0;
 
 function toggle_list_items() {
   menu_items.forEach((item) => {
@@ -26,12 +27,14 @@ async function download_products() {
 }
 
 function get_product(downloaded_prdoucts) {
-  let curr_product = downloaded_prdoucts.shift();
+  let curr_product = downloaded_prdoucts[curr_product_index];
   let curr_product_div = document.createElement("div");
 
   curr_product_div.classList.add("product_item");
   let p_tag = document.createElement("p");
   let id = curr_product["id"];
+  let span_tag1;
+  let span_tag2;
   p_tag.textContent = "ID: " + id;
   span_tag1 = document.createElement("span");
   span_tag2 = document.createElement("span");
@@ -40,22 +43,20 @@ function get_product(downloaded_prdoucts) {
   curr_product_div.appendChild(p_tag);
   curr_product_div.appendChild(span_tag1);
   curr_product_div.appendChild(span_tag2);
-  curr_number_of_products_to_display++;
+  curr_product_index++;
   return curr_product_div;
 }
 
 function put_products(downloaded_prdoucts) {
   let counter = 0;
-  while (
-    downloaded_prdoucts &&
-    curr_number_of_products_to_display != number_of_products_to_display &&
-    counter < 4
-  ) {
+  while (curr_product_index < number_of_products_to_display && counter < 4) {
     let prdouct_to_insert = get_product(downloaded_prdoucts);
     products_list.appendChild(prdouct_to_insert);
     counter++;
   }
 }
+
+downloaded_prdoucts = await download_products();
 
 first_select_item.addEventListener("click", function (event) {
   toggle_list_items();
@@ -69,24 +70,15 @@ document.addEventListener("click", function (event) {
 
 menu_items.forEach((item) => {
   item.addEventListener("click", function (event) {
-    let new_number = item.textContent;
+    let new_number = Number(item.textContent.trim());
     first_select_item.children[0].children[0].textContent = new_number;
-    if (
-      new_number < number_of_products_to_display &&
-      new_number < curr_number_of_products_to_display
-    ) {
-      let number_items_to_remove =
-        curr_number_of_products_to_display - new_number;
+    if (new_number < number_of_products_to_display) {
+      let number_items_to_remove = curr_product_index + 1 - new_number;
       let products_list_children = products_list.children;
-
-      for (
-        let i = 0;
-        i < number_items_to_remove && products_list_children.length > 0;
-        i++
-      ) {
+      for (let i = 0; i < number_items_to_remove; i++) {
         products_list_children[products_list_children.length - 1].remove();
       }
-      curr_number_of_products_to_display = new_number;
+      curr_product_index = new_number - 1;
     }
     number_of_products_to_display = new_number;
     toggle_list_items();
@@ -102,10 +94,6 @@ window.addEventListener("scroll", function () {
       document.documentElement.scrollHeight - window.innerHeight;
 
     if (scrollPosition >= maxScroll - window.innerHeight * 0.5) {
-      if (!is_downloaded) {
-        downloaded_prdoucts = await download_products();
-        is_downloaded = true;
-      }
       put_products(downloaded_prdoucts);
     }
   }, 200);
