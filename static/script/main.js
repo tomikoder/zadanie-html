@@ -74,14 +74,14 @@ menu_items.forEach((item) => {
     first_select_item.children[0].children[0].textContent = new_number;
     if (
       new_number < number_of_products_to_display &&
-      curr_product_index + 1 > new_number
+      curr_product_index > new_number
     ) {
-      let number_items_to_remove = curr_product_index + 1 - new_number;
+      let number_items_to_remove = curr_product_index - new_number;
       let products_list_children = products_list.children;
       for (let i = 0; i < number_items_to_remove; i++) {
         products_list_children[products_list_children.length - 1].remove();
       }
-      curr_product_index = new_number - 1;
+      curr_product_index = new_number;
     }
     number_of_products_to_display = new_number;
     toggle_list_items();
