@@ -72,7 +72,10 @@ menu_items.forEach((item) => {
   item.addEventListener("click", function (event) {
     let new_number = Number(item.textContent.trim());
     first_select_item.children[0].children[0].textContent = new_number;
-    if (new_number < number_of_products_to_display) {
+    if (
+      new_number < number_of_products_to_display &&
+      curr_product_index + 1 > new_number
+    ) {
       let number_items_to_remove = curr_product_index + 1 - new_number;
       let products_list_children = products_list.children;
       for (let i = 0; i < number_items_to_remove; i++) {
