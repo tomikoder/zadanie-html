@@ -298,8 +298,9 @@ header hr {
     width: 7%;
 }
 
-header:first-of-type {
-    margin-bottom: 3.5vw;
+
+body > article:first-of-type > header:first-of-type {
+        margin-bottom: 6.5vw;
 }
 
 #product_info {
@@ -700,7 +701,7 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
         margin-top: 8.5px;
     }
     
-    body > article:nth-of-type(1) header {
+    body > article:first-of-type>header:first-of-type {
         margin-bottom: 60px;
     }
 
@@ -761,6 +762,7 @@ body > article:nth-of-type(2) hr:nth-child(3) {
 }
 
 body > article:nth-of-type(3) header {
+    margin-bottom: 5.5vw;
     padding-top: 40px;
 }
 
