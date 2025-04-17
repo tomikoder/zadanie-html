@@ -234,7 +234,7 @@ h1 {
     }
 
     #product_intro img:not(.vector) {
-        margin-left: 0;
+        margin-right: 0;
     }
 
     #product_intro>div:nth-child(2) div {
@@ -315,6 +315,7 @@ h2 {
 }
 
 header hr {
+    margin-top: 15px;
     width: 7%;
 }
 
@@ -463,8 +464,7 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
     margin-bottom: auto;
 }
 
-#product_info section h4 hr, #product_info section h4 hr {
-    margin-top: 15px;
+#product_info section h4 hr {
     width: 25.5%;
 }
 
@@ -703,12 +703,6 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
         margin-top: 10px;
     }
 
-    #product_info section:nth-child(2) picture:first-of-type img {
-    }
-
-    #product_info section:nth-child(2) picture:last-of-type img {
-    }
-
     #product_info section:nth-of-type(2) li:nth-child(2) {
         margin-left: 35px;
     }
@@ -795,7 +789,7 @@ body > article:nth-of-type(3) header {
 }
 
 h3 {
-    margin-top: 5.25vw;
+    margin-top: max(5.25vw, 60px);
     font-weight: 400;
     font-size: clamp(13px, 1.62vw, 2.5vw);
 }
@@ -854,19 +848,19 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     grid-area: syrop;
 }
 
-#product_ingredients section:nth-child(-n+3) {
+.left_items {
     margin-right: 12px;
 }
 
-#product_ingredients section:nth-last-child(-n+4) {
+.right_items {
     margin-right: 33px;
 }
 
-#product_ingredients section:last-child {
+.hiden_items {
     display: none;
 }
 
-#product_ingredients section:nth-child(-n+3), #product_ingredients section:nth-last-child(-n+4) {
+.left_items , .right_items, .hiden_items {
     text-align: center;
 }
 
@@ -949,13 +943,15 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 body > div:first-of-type {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 body > div:first-of-type > div {
     margin-top: 40px;
     position: relative;
-    max-width: 49%;
+    width: 100%;
     min-width: 320px;
+    max-width: 320px;
     height: auto;
     margin-right: 10px;
 }
@@ -1129,6 +1125,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     #product_ingredients>div:nth-child(4) {
+        margin-bottom: 0;
         width: 100%;
     }
 
@@ -1199,17 +1196,10 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     body > div:first-of-type > div {
-        overflow: hidden;
+        margin-top: 0;
         margin-right: 0;
     }
 }
-
-@media (min-width: 371px) {
-    body > div:first-of-type > div {
-        overflow : visible;
-    }
-}
-
 
 body > article:nth-of-type(4) {
     z-index: 2;
