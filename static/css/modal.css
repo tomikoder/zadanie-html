@@ -68,7 +68,7 @@
 
 @media (min-width: 320px) and (max-width: 415px) {
     #product_modal > div:first-child {
-        margin: 90% auto;
+        margin: 50% auto;
     }
 }
 
