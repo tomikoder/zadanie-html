@@ -260,7 +260,8 @@ h1 {
     
     #product_intro img:not(.vector) {
         margin-top: 8px;
-        width: 283px;
+        width: 290px;
+        margin-right: 5px;
         height: auto;
     }
 
@@ -274,14 +275,14 @@ h1 {
     }
 
     #product_intro div:nth-child(1) .vector:nth-child(1) {
-        width: 17%;
-        left: 2.5%;
+        width: 16%;
+        left: 3%;
         bottom: 10%;
     }
 
     #product_intro div:nth-child(1) .vector:nth-child(2) {
         width: 23%;
-        right: 2%;
+        right: 3%;
     }
 
     #product_intro > .vector:first-of-type {
@@ -618,7 +619,7 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
     }
 
     header hr {
-        width: 40%;
+        width: 45%;
     }
 
     #product_info ol .circle_one {
@@ -626,7 +627,7 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
     }
 
     body > article:nth-of-type(2) ol .circle_one {
-        margin-left: 18px;
+        margin-left: 16px;
     }
 
     #product_info ol, 
@@ -744,6 +745,14 @@ body > article:nth-of-type(2) ol li:nth-child(7) {
         right: 0;
         top: 76%;
     }
+
+    header hr {
+        margin-top: 15px;
+    }
+
+    header hr:nth-of-type(2) {
+        margin-top: 6px;
+    }
 }
 
 body > article:nth-of-type(2) {
@@ -779,7 +788,7 @@ body > article:nth-of-type(2) hr:nth-child(3) {
     }
     body>article:nth-of-type(2)>header img.vector:nth-of-type(2) {
         right: 0;
-        top: 35%;
+        top: 27%;
     }
 }
 
@@ -887,9 +896,9 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 }
 
 
-#product_ingredients div:nth-child(4) img.vector:nth-of-type(1) {
+#product_ingredients div:nth-child(4) img.vector:nth-child(2) {
     left: 0.5%;
-    top: 35.5%;
+    top: 31%;
     width: 38%;
 }
 
@@ -950,10 +959,17 @@ body > div:first-of-type > div {
     margin-top: 40px;
     position: relative;
     width: 100%;
-    min-width: 320px;
-    max-width: 320px;
+    max-width: 49%;
+    min-width: 500px;
     height: auto;
     margin-right: 10px;
+}
+
+@media (min-width: 320px) and (max-width: 415px) {
+    body>div:first-of-type>div {
+        min-width: 320px;
+        max-width: 330px
+    }
 }
 
 body > div:first-of-type > div img:not(.vector) {
@@ -1042,17 +1058,25 @@ body > div:first-of-type > div img.vector:nth-child(2) {
                              "msm"
                              "syrop"
                              "pic";
-    grid-template-rows: 250px 250px 250px 260px 277px 255px 185px 1fr;
+    grid-template-rows: 250px 250px 270px 265px 265px 265px 190px 1fr;
     justify-items: center;
-    row-gap: 40px;
+    row-gap: 24px;
     }
 
     #product_ingredients section {
         display: flex;
         flex-direction: column;
         justify-content: end;
-        row-gap: 23px;
+        row-gap: 19px;
         width: 94%;
+    }
+
+    #product_ingredients section:nth-of-type(2) {
+        gap: 21px
+    }
+
+    #product_ingredients section:nth-of-type(2) img {
+        display: block;
     }
 
     .circle_two {
@@ -1060,17 +1084,16 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     #product_ingredients div:nth-child(4) picture img {
-        margin-top: 25px;
-        margin-left: 0;
+        margin-top: 41px;
+        margin-bottom: 0;
+        margin-left: 5px;
+        min-width: 210px;
     }
 
-    #product_ingredients section:nth-child(-n+3) {
+    .left_items {
         margin-right: 0;
     }
     
-    #product_ingredients section:nth-child(-n+3) p:nth-child(3) {
-        margin-right: 0;
-    }
 
     #product_ingredients section:nth-child(1) hr {
         display: none;
@@ -1097,7 +1120,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     body > article:nth-of-type(3) header {
         position: relative;
         padding-top: 67px;
-        margin-bottom: 55px;
+        margin-bottom: 50px;
     }
 
     body > article:nth-of-type(3) header h1:nth-child(3) {
@@ -1121,6 +1144,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     #product_ingredients h4 {
+        font-size: 20.5px;
         margin-top: 0;
     }
 
@@ -1130,69 +1154,72 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     #product_ingredients section:nth-of-type(5) {
-        row-gap: 23px;
+        row-gap: 19px;
     }
 
-    #product_ingredients section:nth-of-type(5) img {
+    #product_ingredients section:nth-of-type(5) img:not(.vector) {
         margin-bottom: 9px;
     }
 
     #product_ingredients section:nth-of-type(3) {
-        row-gap: 21px;
+        row-gap: 20px;
     }
 
-    #product_ingredients section:nth-of-type(3) img {
-        margin-bottom: 2px;
+    #product_ingredients section:nth-of-type(6) {
+        row-gap: 20px;
     }
-
+        
     #product_ingredients section:nth-of-type(4) img.vector:nth-of-type(2) {
-        top: 7.5%;
+        top: 10%;
     }
 
     #product_ingredients section:nth-of-type(4) img.vector:nth-of-type(3) {
         right: 0;
-        top: 15%;
+        top: 18%;
     }
 
     #product_ingredients section:nth-of-type(5) img.vector:nth-of-type(2) {
-        top: 0;
+        top: 7%;
     }
 
     #product_ingredients section:nth-of-type(5) img.vector:nth-of-type(3) {
-        top: 10%;
+        top: 13%;
         right: 0;
     }
     
     #product_ingredients section:nth-of-type(6) img.vector:nth-of-type(2) {
-        top: 0;
+        top: 4%;
     }
 
     #product_ingredients section:nth-of-type(6) img.vector:nth-of-type(3) {
-        top: 5%;
+        top: 11%;
         right: 0;
     }
 
     #product_ingredients div:nth-child(4) img.vector:nth-child(2) {
-        left: 2%;
-        width: 50%;
+        left: 5.5%;
+        width: 45%;
+        max-width: 200px;
         transform: rotate(-26deg);
     }
 
     #product_ingredients div:nth-child(4) img.vector:nth-child(3) {
-        width: 40%;
-        top: 20%;
-        right: 8.5%;
+        width: 37%;
+        top: 22%;
+        right: 10.5%;
+        max-width: 150px;
         transform: scaleX(-1) rotate(-38deg);
     }
 
     body > div:first-of-type > div img.vector:nth-child(1) {
         left: 2%;
-         width: 40%;
+        width: 40%;
     }
 
     body > div:first-of-type > div img.vector:nth-child(2) {
         right: -8%;
         width: 33%;
+
     }
 
     body > div:first-of-type > div {
