@@ -95,25 +95,25 @@ nav ul li:nth-child(3) a {
     }
 }
 
-#section_1 {
+#introductory_content {
     position: relative;
     background-color: #F1F1F1;
     padding-bottom: 30px;
 }
 
-#section_1 > .vector:nth-of-type(1) {
+#introductory_content > .vector:nth-of-type(1) {
     width: 20%;
     left: 0;
     top: 42%;
 }
 
-#section_1 > .vector:nth-of-type(2) {
+#introductory_content > .vector:nth-of-type(2) {
     width: 25%;
     right: 0;
     top: 41%;
 }
 
-#section_1 > .vector:nth-of-type(3) {
+#introductory_content > .vector:nth-of-type(3) {
     width: 6%;
     right: 0;
     top: 28%;
@@ -321,7 +321,7 @@ header hr {
 }
 
 
-#section_1 > header {
+#introductory_content > header {
     margin-bottom: 6.5vw;
 }
 
@@ -418,7 +418,7 @@ header hr {
     margin-right: 85px;
 }
 
-#product_info ol, #section_2 ol {
+#product_info ol, #product_effect ol {
     display: grid;
     grid-auto-flow: row;
     justify-items: center;
@@ -432,7 +432,7 @@ header hr {
     grid-template-rows: 60px 60px;
 }
 
-#section_2 ol {
+#product_effect ol {
     margin-top: 49px;
     grid-template-rows: 60px 60px 60px 65px 65px 62px 1fr;
     justify-items: start;
@@ -440,7 +440,7 @@ header hr {
 }
 
 #product_info ol li,
-#section_2 ol li {
+#product_effect ol li {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -452,16 +452,16 @@ header hr {
     width: 70%;
 }
 
-#section_2 ol li:nth-child(4) {
+#product_effect ol li:nth-child(4) {
     margin-bottom: 4px;
 }
 
-#section_2 ol li:nth-child(5) {
+#product_effect ol li:nth-child(5) {
     margin-bottom: 11px;
 }
 
-#section_2 ol li:nth-child(6),
-#section_2 ol li:nth-child(7) {
+#product_effect ol li:nth-child(6),
+#product_effect ol li:nth-child(7) {
     margin-bottom: auto;
 }
 
@@ -626,12 +626,12 @@ header hr {
         margin-left:40px;
     }
 
-    #section_2 ol .circle_one {
+    #product_effect ol .circle_one {
         margin-left: 16px;
     }
 
     #product_info ol, 
-    #section_2 ol {
+    #product_effect ol {
         font-weight: 100;
         font-size: 13px;
     }
@@ -650,7 +650,7 @@ header hr {
         gap: 21px
     }
 
-    #section_2 ol li {
+    #product_effect ol li {
         gap: 29px;
     }
      
@@ -754,25 +754,25 @@ header hr {
         margin-top: 6px;
     }
 
-    #section_1 > header {
+    #introductory_content > header {
         margin-bottom: 60px;
     }
 }
 
-#section_2 {
+#product_effect {
     display: none;
 }
 
-#section_2 > header {
+#product_effect > header {
     position: relative;
     padding-top: 69px;
 }
 
-#section_2 ol {
+#product_effect ol {
     margin-bottom: 28px;
 }
 
-#section_2 hr:nth-child(3) {
+#product_effect hr:nth-child(3) {
     margin-bottom: 30px;
     height: 18px;
     border: none;
@@ -782,11 +782,11 @@ header hr {
 }
 
 @media (min-width: 320px) and (max-width: 415px) {
-    #section_2 {
+    #product_effect {
         display: block;
     }
     
-    #section_2 > header img.vector:nth-of-type(1) {
+    #product_effect > header img.vector:nth-of-type(1) {
         left: 0;
         top: 15%;
     }
@@ -953,13 +953,13 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     position: relative;
 }
 
-#section_4 {
+#graphic_cont {
     display: flex;
     justify-content: center;
     width: 100%;
 }
 
-#section_4 > div {
+#graphic_cont > div {
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -970,7 +970,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 }
 
 @media (min-width: 320px) and (max-width: 415px) {
-    #section_4 > div {
+    #graphic_cont > div {
         overflow: hidden;
         min-width: 320px;
         max-width: 330px;
@@ -1031,7 +1031,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
 }
 
 @media (max-width: 620px) {
-    #section_3 {
+    #product_detai {
         display: flex;
         flex-direction: column;
         overflow: hidden;
@@ -1230,7 +1230,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 }
 
-body > article:nth-of-type(4) {
+#buy_section {
     z-index: 2;
     position: relative;
     padding-top: 90px;
