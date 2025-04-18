@@ -58,6 +58,10 @@ function put_products(downloaded_prdoucts) {
 
 downloaded_prdoucts = await download_products();
 
+while (curr_product_index < number_of_products_to_display) {
+  put_products(downloaded_prdoucts);
+}
+
 first_select_item.addEventListener("click", function (event) {
   toggle_list_items();
 });
