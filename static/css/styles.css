@@ -971,6 +971,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 
 @media (min-width: 320px) and (max-width: 415px) {
     #section_4 > div {
+        overflow: hidden;
         min-width: 320px;
         max-width: 330px;
         margin-top: 0;
