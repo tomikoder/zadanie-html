@@ -2,17 +2,13 @@ const first_select_item = document.getElementById("first_select_item");
 const drop_down_list = document.getElementById("drop_down_list");
 const menu_items = document.querySelectorAll(".list_item");
 const products_list = document.getElementById("products_list");
-
+const BASIC_PAGE_SIZE = 25;
 let open_menu = false;
-let downloaded_products;
 let page_size = Number(
   first_select_item.children[0].children[0].textContent.trim()
 );
 let page_number = 1;
-let totalPages;
 let end = false;
-let number_of_items = 0;
-let items_to_remove = 0;
 
 function toggle_list_items() {
   menu_items.forEach((item) => {
@@ -21,14 +17,13 @@ function toggle_list_items() {
   open_menu = !open_menu;
 }
 
-async function download_products(page_size) {
+async function download_products(page_number) {
   const response = await fetch(
-    `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page_number}&pageSize=${page_size}`
+    `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page_number}&pageSize=25`
   );
   const converted_data = await response.json();
-  totalPages = converted_data["totalPages"];
-  if (page_number === totalPages) end = true;
-  page_number = converted_data["currentPage"] + 1;
+  let totalPages = converted_data["totalPages"];
+  if (totalPages == page_number) end = true;
   let data_to_return = converted_data["data"];
   return data_to_return;
 }
@@ -56,14 +51,19 @@ function put_product(curr_product) {
   products_list.appendChild(prdouct_to_insert);
 }
 
-async function update_products(page_size, page_number) {
-  downloaded_products = await download_products(page_size, page_number);
-  if (items_to_remove != 0) {
-    downloaded_products = downloaded_products.slice(items_to_remove);
-    items_to_remove = 0;
+async function update_products(page_size) {
+  let number_of_requests = page_size / BASIC_PAGE_SIZE;
+  let requests = [];
+  for (let i = 0; i < number_of_requests && !end; i++) {
+    requests.push(download_products(page_number));
+    page_number++;
   }
-  number_of_items += downloaded_products.length;
-  downloaded_products.forEach(put_product);
+  let downloaded_products = await Promise.all(requests);
+  let result = [];
+  for (const index in downloaded_products) {
+    result = result.concat(downloaded_products[index]);
+  }
+  result.forEach(put_product);
 }
 
 first_select_item.addEventListener("click", function (event) {
@@ -78,24 +78,10 @@ document.addEventListener("click", function (event) {
 
 menu_items.forEach((item) => {
   item.addEventListener("click", function (event) {
-    toggle_list_items();
     let new_page_size = Number(item.textContent.trim());
-
-    if (page_size === new_page_size || number_of_items == 0) return;
-
     first_select_item.children[0].children[0].textContent = new_page_size;
-    page_number = Math.ceil(number_of_items / new_page_size);
     page_size = new_page_size;
-    if (number_of_items % new_page_size == 0) {
-      page_number++;
-      return;
-    }
-
-    if (page_number == 1) {
-      items_to_remove = number_of_items;
-    } else {
-      items_to_remove = page_number * new_page_size - number_of_items;
-    }
+    toggle_list_items();
   });
 });
 
@@ -107,7 +93,7 @@ window.addEventListener("scroll", function () {
     const maxScroll =
       document.documentElement.scrollHeight - window.innerHeight;
     if (scrollPosition >= maxScroll - window.innerHeight * 0.5 && !end) {
-      update_products(page_size, page_number);
+      update_products(page_size);
     }
   }, 200);
 });
