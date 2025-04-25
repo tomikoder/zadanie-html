@@ -4,12 +4,15 @@ const menu_items = document.querySelectorAll(".list_item");
 const products_list = document.getElementById("products_list");
 
 let open_menu = false;
-let downloaded_prdoucts;
-let number_of_products_to_display = Number(
+let downloaded_products;
+let page_size = Number(
   first_select_item.children[0].children[0].textContent.trim()
 );
-
-let curr_product_index = 0;
+let page_number = 1;
+let totalPages;
+let end = false;
+let number_of_items = 0;
+let items_to_remove = 0;
 
 function toggle_list_items() {
   menu_items.forEach((item) => {
@@ -18,18 +21,20 @@ function toggle_list_items() {
   open_menu = !open_menu;
 }
 
-async function download_products() {
+async function download_products(page_size) {
   const response = await fetch(
-    `https://brandstestowy.smallhost.pl/api/random?pageSize=100`
+    `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page_number}&pageSize=${page_size}`
   );
   const converted_data = await response.json();
-  return converted_data["data"];
+  totalPages = converted_data["totalPages"];
+  if (page_number === totalPages) end = true;
+  page_number = converted_data["currentPage"] + 1;
+  let data_to_return = converted_data["data"];
+  return data_to_return;
 }
 
-function get_product(downloaded_prdoucts) {
-  let curr_product = downloaded_prdoucts[curr_product_index];
+function get_product(curr_product) {
   let curr_product_div = document.createElement("div");
-
   curr_product_div.classList.add("product_item");
   let p_tag = document.createElement("p");
   let id = curr_product["id"];
@@ -43,23 +48,22 @@ function get_product(downloaded_prdoucts) {
   curr_product_div.appendChild(p_tag);
   curr_product_div.appendChild(span_tag1);
   curr_product_div.appendChild(span_tag2);
-  curr_product_index++;
   return curr_product_div;
 }
 
-function put_products(downloaded_prdoucts) {
-  let counter = 0;
-  while (curr_product_index < number_of_products_to_display && counter < 4) {
-    let prdouct_to_insert = get_product(downloaded_prdoucts);
-    products_list.appendChild(prdouct_to_insert);
-    counter++;
-  }
+function put_product(curr_product) {
+  const prdouct_to_insert = get_product(curr_product);
+  products_list.appendChild(prdouct_to_insert);
 }
 
-downloaded_prdoucts = await download_products();
-
-while (curr_product_index < number_of_products_to_display) {
-  put_products(downloaded_prdoucts);
+async function update_products(page_size, page_number) {
+  downloaded_products = await download_products(page_size, page_number);
+  if (items_to_remove != 0) {
+    downloaded_products = downloaded_products.slice(items_to_remove);
+    items_to_remove = 0;
+  }
+  number_of_items += downloaded_products.length;
+  downloaded_products.forEach(put_product);
 }
 
 first_select_item.addEventListener("click", function (event) {
@@ -74,21 +78,24 @@ document.addEventListener("click", function (event) {
 
 menu_items.forEach((item) => {
   item.addEventListener("click", function (event) {
-    let new_number = Number(item.textContent.trim());
-    first_select_item.children[0].children[0].textContent = new_number;
-    if (
-      new_number < number_of_products_to_display &&
-      curr_product_index > new_number
-    ) {
-      let number_items_to_remove = curr_product_index - new_number;
-      let products_list_children = products_list.children;
-      for (let i = 0; i < number_items_to_remove; i++) {
-        products_list_children[products_list_children.length - 1].remove();
-      }
-      curr_product_index = new_number;
-    }
-    number_of_products_to_display = new_number;
     toggle_list_items();
+    let new_page_size = Number(item.textContent.trim());
+
+    if (page_size === new_page_size || number_of_items == 0) return;
+
+    first_select_item.children[0].children[0].textContent = new_page_size;
+    page_number = Math.ceil(number_of_items / new_page_size);
+    page_size = new_page_size;
+    if (number_of_items % new_page_size == 0) {
+      page_number++;
+      return;
+    }
+
+    if (page_number == 1) {
+      items_to_remove = number_of_items;
+    } else {
+      items_to_remove = page_number * new_page_size - number_of_items;
+    }
   });
 });
 
@@ -99,9 +106,8 @@ window.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY || window.pageYOffset;
     const maxScroll =
       document.documentElement.scrollHeight - window.innerHeight;
-
-    if (scrollPosition >= maxScroll - window.innerHeight * 0.5) {
-      put_products(downloaded_prdoucts);
+    if (scrollPosition >= maxScroll - window.innerHeight * 0.5 && !end) {
+      update_products(page_size, page_number);
     }
   }, 200);
 });
