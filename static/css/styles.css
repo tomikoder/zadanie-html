@@ -281,10 +281,11 @@ h1 {
     #product_intro div:nth-child(1) .vector:nth-child(1) {
         width: 16%;
         left: 3%;
-        bottom: 10%;
+        bottom: 12%;
     }
 
     #product_intro div:nth-child(1) .vector:nth-child(2) {
+        top:  40.5%;
         width: 23%;
         right: 4.5%;
     }
