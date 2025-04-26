@@ -22,8 +22,7 @@ async function download_products(page_number) {
     `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page_number}&pageSize=25`
   );
   const converted_data = await response.json();
-  let totalPages = converted_data["totalPages"];
-  if (totalPages == page_number) end = true;
+  if (converted_data["totalPages"] == page_number) end = true;
   let data_to_return = converted_data["data"];
   return data_to_return;
 }
@@ -54,16 +53,25 @@ function put_product(curr_product) {
 async function update_products(page_size) {
   let number_of_requests = page_size / BASIC_PAGE_SIZE;
   let requests = [];
+  let page_number_copy = page_number;
   for (let i = 0; i < number_of_requests && !end; i++) {
-    requests.push(download_products(page_number));
-    page_number++;
+    requests.push(download_products(page_number_copy));
+    page_number_copy++;
   }
-  let downloaded_products = await Promise.all(requests);
-  let result = [];
-  for (const index in downloaded_products) {
-    result = result.concat(downloaded_products[index]);
+  let downloaded_products;
+  try {
+    downloaded_products = await Promise.all(requests);
+  } catch (err) {
+    alert(err);
+    return;
+  } finally {
+    page_number = page_number_copy;
+    let result = [];
+    for (const index in downloaded_products) {
+      result = result.concat(downloaded_products[index]);
+    }
+    result.forEach(put_product);
   }
-  result.forEach(put_product);
 }
 
 first_select_item.addEventListener("click", function (event) {
