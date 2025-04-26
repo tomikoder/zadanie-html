@@ -299,6 +299,10 @@ h1 {
         top: 23.5%;
         right: 0;
     }
+
+    #product_intro div:nth-child(1) > div {
+        margin-top: 0;
+    }
 }
 
 header {
