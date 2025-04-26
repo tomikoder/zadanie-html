@@ -46,8 +46,8 @@ function get_product(curr_product) {
 }
 
 function put_product(curr_product) {
-  const prdouct_to_insert = get_product(curr_product);
-  products_list.appendChild(prdouct_to_insert);
+  const product_to_insert = get_product(curr_product);
+  products_list.appendChild(product_to_insert);
 }
 
 async function update_products(page_size) {
