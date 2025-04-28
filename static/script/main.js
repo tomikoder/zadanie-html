@@ -62,7 +62,8 @@ async function update_products(page_size) {
   try {
     downloaded_products = await Promise.all(requests);
   } catch (err) {
-    alert(err);
+    end = false;
+    alert("Connection error");
     return;
   } finally {
     page_number = page_number_copy;
