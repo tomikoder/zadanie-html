@@ -2,13 +2,12 @@ const first_select_item = document.getElementById("first_select_item");
 const drop_down_list = document.getElementById("drop_down_list");
 const menu_items = document.querySelectorAll(".list_item");
 const products_list = document.getElementById("products_list");
-const BASIC_PAGE_SIZE = 25;
 let open_menu = false;
 let page_size = Number(
   first_select_item.children[0].children[0].textContent.trim()
 );
 let page_number = 1;
-let end = false;
+let end_of_pagination = false;
 
 function toggle_list_items() {
   menu_items.forEach((item) => {
@@ -17,17 +16,17 @@ function toggle_list_items() {
   open_menu = !open_menu;
 }
 
-async function download_products(page_number) {
+async function download_products() {
   const response = await fetch(
-    `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page_number}&pageSize=25`
+    `https://brandstestowy.smallhost.pl/api/random?pageNumber=${page_number}&pageSize=${page_size}`
   );
   const converted_data = await response.json();
-  if (converted_data["totalPages"] == page_number) end = true;
+  if (converted_data["totalPages"] == page_number) end_of_pagination = true;
   let data_to_return = converted_data["data"];
   return data_to_return;
 }
 
-function get_product(curr_product) {
+function get_product_div(curr_product) {
   let curr_product_div = document.createElement("div");
   curr_product_div.classList.add("product_item");
   let p_tag = document.createElement("p");
@@ -45,34 +44,21 @@ function get_product(curr_product) {
   return curr_product_div;
 }
 
-function put_product(curr_product) {
-  const product_to_insert = get_product(curr_product);
-  products_list.appendChild(product_to_insert);
+function put_product_div(curr_product) {
+  const product_div = get_product_div(curr_product);
+  products_list.appendChild(product_div);
 }
 
-async function update_products(page_size) {
-  let number_of_requests = page_size / BASIC_PAGE_SIZE;
-  let requests = [];
-  let page_number_copy = page_number;
-  for (let i = 0; i < number_of_requests && !end; i++) {
-    requests.push(download_products(page_number_copy));
-    page_number_copy++;
-  }
-  let downloaded_products;
+async function update_products() {
+  let result;
   try {
-    downloaded_products = await Promise.all(requests);
-  } catch (err) {
-    end = false;
-    alert("Connection error");
+    result = await download_products();
+  } catch (e) {
+    console.log("Connection error");
     return;
-  } finally {
-    page_number = page_number_copy;
-    let result = [];
-    for (const index in downloaded_products) {
-      result = result.concat(downloaded_products[index]);
-    }
-    result.forEach(put_product);
   }
+  page_number += 1;
+  result.forEach(put_product_div);
 }
 
 first_select_item.addEventListener("click", function (event) {
@@ -89,6 +75,12 @@ menu_items.forEach((item) => {
   item.addEventListener("click", function (event) {
     let new_page_size = Number(item.textContent.trim());
     first_select_item.children[0].children[0].textContent = new_page_size;
+    if (new_page_size != page_size) {
+      while (products_list.firstChild) {
+        products_list.removeChild(products_list.firstChild);
+      }
+      page_number = 1;
+    }
     page_size = new_page_size;
     toggle_list_items();
   });
@@ -101,8 +93,11 @@ window.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY || window.pageYOffset;
     const maxScroll =
       document.documentElement.scrollHeight - window.innerHeight;
-    if (scrollPosition >= maxScroll - window.innerHeight * 0.5 && !end) {
-      update_products(page_size);
+    if (
+      scrollPosition >= maxScroll - window.innerHeight * 0.5 &&
+      !end_of_pagination
+    ) {
+      update_products();
     }
   }, 200);
 });
