@@ -4,7 +4,7 @@ const menu_items = document.querySelectorAll(".list_item");
 const products_list = document.getElementById("products_list");
 let open_menu = false;
 let page_size = Number(
-  first_select_item.children[0].children[0].textContent.trim()
+  first_select_item.querySelector("span").textContent.trim()
 );
 let page_number = 1;
 let end_of_pagination = false;
@@ -26,26 +26,26 @@ async function download_products() {
   return data_to_return;
 }
 
-function get_product_div(curr_product) {
-  let curr_product_div = document.createElement("div");
-  curr_product_div.classList.add("product_item");
+function get_product_div(product_data) {
+  let product_div = document.createElement("div");
+  product_div.classList.add("product_item");
   let p_tag = document.createElement("p");
-  let id = curr_product["id"];
+  let id = product_data["id"];
   let span_tag1;
   let span_tag2;
   p_tag.textContent = "ID: " + id;
   span_tag1 = document.createElement("span");
   span_tag2 = document.createElement("span");
-  span_tag1.textContent = curr_product["id"];
-  span_tag2.textContent = curr_product["text"];
-  curr_product_div.appendChild(p_tag);
-  curr_product_div.appendChild(span_tag1);
-  curr_product_div.appendChild(span_tag2);
-  return curr_product_div;
+  span_tag1.textContent = product_data["id"];
+  span_tag2.textContent = product_data["text"];
+  product_div.appendChild(p_tag);
+  product_div.appendChild(span_tag1);
+  product_div.appendChild(span_tag2);
+  return product_div;
 }
 
-function put_product_div(curr_product) {
-  const product_div = get_product_div(curr_product);
+function put_product_div(product_data) {
+  const product_div = get_product_div(product_data);
   products_list.appendChild(product_div);
 }
 
@@ -74,7 +74,7 @@ document.addEventListener("click", function (event) {
 menu_items.forEach((item) => {
   item.addEventListener("click", function (event) {
     let new_page_size = Number(item.textContent.trim());
-    first_select_item.children[0].children[0].textContent = new_page_size;
+    first_select_item.querySelector("span").textContent = new_page_size;
     if (new_page_size != page_size) {
       while (products_list.firstChild) {
         products_list.removeChild(products_list.firstChild);
