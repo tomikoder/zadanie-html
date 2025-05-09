@@ -17,7 +17,7 @@ nav {
     grid-template-rows: 85px;
     place-items: center;
     box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-    position: relative;  
+    position: relative;
     z-index: 1;
 }
 
@@ -62,11 +62,11 @@ nav ul li:nth-child(3) a {
     nav {
         grid-template-columns: 1fr;
     }
-    
+
     nav ul {
         justify-content: center;
     }
-    
+
     nav img {
         margin-left: 0;
     }
@@ -106,19 +106,19 @@ nav ul li:nth-child(3) a {
     padding-bottom: 30px;
 }
 
-#introductory_content > .vector:nth-of-type(1) {
+#introductory_content>.vector:nth-of-type(1) {
     width: 20%;
     left: 0;
     top: 42%;
 }
 
-#introductory_content > .vector:nth-of-type(2) {
+#introductory_content>.vector:nth-of-type(2) {
     width: 25%;
     right: 0;
     top: 41%;
 }
 
-#introductory_content > .vector:nth-of-type(3) {
+#introductory_content>.vector:nth-of-type(3) {
     width: 6%;
     right: 0;
     top: 28%;
@@ -140,12 +140,12 @@ header h2,
 }
 
 
-#product_intro > div:nth-child(1) {
+#product_intro>div:nth-child(1) {
     display: flex;
     justify-content: center;
 }
 
-#product_intro div:nth-child(1) > div {
+#product_intro div:nth-child(1)>div {
     margin-top: 26px;
     position: relative;
 }
@@ -153,45 +153,45 @@ header h2,
 #product_intro img:not(.vector) {
     margin-right: 27px;
     max-width: 528px;
-    width:  100%;
+    width: 100%;
     height: auto;
     position: relative;
     z-index: 2;
 }
 
-#product_intro > div:nth-child(1) {
+#product_intro>div:nth-child(1) {
     position: relative;
 }
 
-#product_intro > div:nth-child(2) {
+#product_intro>div:nth-child(2) {
     height: auto;
     margin-top: 140px;
 }
 
-#product_intro + header {
+#product_intro+header {
     margin-top: 7.9vw;
 }
 
 h1 {
     padding: 0;
     margin: 0;
-    font-size: clamp(40px, 6.24vw, 95px);
+    font-size: clamp(2.5rem, 6.24vw, 5.9375rem);
     font-weight: 500;
     margin-bottom: 24px;
     margin-left: 9px;
 }
 
-#product_intro > div:nth-child(2) h1 span {
+#product_intro>div:nth-child(2) h1 span {
     color: #AB303C;
 }
 
-#product_intro > div:nth-child(2) div {
+#product_intro>div:nth-child(2) div {
     margin-left: 8px;
 }
 
-#product_intro > div:nth-child(2) div p:nth-child(1) {
+#product_intro>div:nth-child(2) div p:nth-child(1) {
     line-height: 1.3;
-    font-size: clamp(20px, 5vw, 37.6px);
+    font-size: clamp(1.25rem, 5vw, 2.35rem);
     background: linear-gradient(to right, #111111, #B1B1B1);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -216,7 +216,7 @@ h1 {
     top: 39.75%;
 }
 
-#product_intro > div:nth-child(2) div p:nth-child(2) {
+#product_intro>div:nth-child(2) div p:nth-child(2) {
     margin-bottom: 15px;
 }
 
@@ -253,7 +253,7 @@ h1 {
         align-items: center;
     }
 
-    #product_intro > div:nth-child(2) {
+    #product_intro>div:nth-child(2) {
         margin-left: 0;
         margin-top: 50px;
         text-align: center;
@@ -262,11 +262,12 @@ h1 {
 }
 
 @media (min-width: 320px) and (max-width: 415px) {
-    #product_intro button, 
+
+    #product_intro button,
     h1 {
         display: none;
-    } 
-    
+    }
+
     #product_intro img:not(.vector) {
         margin-top: 8px;
         width: 289px;
@@ -274,12 +275,12 @@ h1 {
         margin-right: 7px;
     }
 
-    #product_intro > div:nth-child(2) {
+    #product_intro>div:nth-child(2) {
         margin-top: 25px;
         margin-bottom: 112px;
     }
 
-    #product_intro > div:nth-child(2) div p:nth-child(1) {
+    #product_intro>div:nth-child(2) div p:nth-child(1) {
         margin-bottom: 20px;
     }
 
@@ -290,23 +291,24 @@ h1 {
     }
 
     #product_intro div:nth-child(1) .vector:nth-child(2) {
-        top:  40.5%;
+        top: 40.5%;
         width: 23%;
         right: 4.5%;
     }
 
-    #product_intro > .vector:first-of-type {
+    #product_intro>.vector:first-of-type {
         width: 22%;
         top: 21.1%;
         left: 0;
     }
-    #product_intro > .vector:last-of-type {
+
+    #product_intro>.vector:last-of-type {
         width: 18%;
         top: 23.5%;
         right: 0;
     }
 
-    #product_intro div:nth-child(1) > div {
+    #product_intro div:nth-child(1)>div {
         margin-top: 0;
     }
 }
@@ -319,7 +321,7 @@ header {
 
 h2 {
     text-align: center;
-    font-size: clamp(20.8px, 2.5vw, 38px);
+    font-size: clamp(1.3rem, 2.5vw, 2.375rem);
     font-weight: 500;
     background: linear-gradient(to right, #111111, #B1B1B1, #696969, #B1B1B1);
     -webkit-background-clip: text;
@@ -335,7 +337,7 @@ header hr {
 }
 
 
-#introductory_content > header {
+#introductory_content>header {
     margin-bottom: 6.5vw;
 }
 
@@ -400,11 +402,12 @@ header hr {
     margin-top: 20px;
 }
 
-#product_info section:nth-child(1) picture img, #product_info section:nth-child(1) picture hr  {
+#product_info section:nth-child(1) picture img,
+#product_info section:nth-child(1) picture hr {
     margin-right: 20px;
 }
 
-#product_info section > div {
+#product_info section>div {
     width: 421px;
     position: relative;
     margin-top: 15px;
@@ -432,14 +435,15 @@ header hr {
     box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.25);
 }
 
-#product_info ol, #product_effect ol {
+#product_info ol,
+#product_effect ol {
     display: grid;
     grid-auto-flow: row;
     justify-items: center;
     padding: 0;
     margin: 0;
     width: auto;
-    list-style: none;   
+    list-style: none;
 }
 
 #product_info ol {
@@ -495,7 +499,7 @@ header hr {
 }
 
 
-#product_info section:nth-child(2) > div {
+#product_info section:nth-child(2)>div {
     margin-left: 4px;
     justify-content: center;
     display: flex;
@@ -536,7 +540,9 @@ header hr {
 }
 
 
-@media (max-width: 1400px), (min-width: 1664px) {
+@media (max-width: 1400px),
+(min-width: 1664px) {
+
     #product_info section:nth-child(1) p,
     #product_info section:nth-child(1) div,
     #product_info section:nth-child(3) h4,
@@ -577,7 +583,7 @@ header hr {
     }
 
     #product_info section:nth-child(3) img:not(.vector) {
-            margin-left: 0;
+        margin-left: 0;
     }
 }
 
@@ -650,14 +656,14 @@ header hr {
     }
 
     #product_info ol .circle_one {
-        margin-left:40px;
+        margin-left: 40px;
     }
 
     #product_effect ol .circle_one {
         margin-left: 16px;
     }
 
-    #product_info ol, 
+    #product_info ol,
     #product_effect ol {
         font-weight: 100;
         font-size: 0.8125rem;
@@ -680,12 +686,13 @@ header hr {
     #product_effect ol li {
         gap: 29px;
     }
-     
-    body > article:first-of-type {
+
+    body>article:first-of-type {
         padding-bottom: 35px;
     }
 
-    #product_info section p, #product_intro div div p:nth-child(2) {
+    #product_info section p,
+    #product_intro div div p:nth-child(2) {
         margin: 0 0;
         font-size: 0.8125rem;
         font-weight: 300;
@@ -698,7 +705,7 @@ header hr {
         margin-bottom: 12px;
         width: 88%;
     }
-    
+
     #product_info section:nth-of-type(3) p {
         width: 93%;
     }
@@ -712,13 +719,13 @@ header hr {
         width: auto;
     }
 
-    #product_info section > h4 {
+    #product_info section>h4 {
         font-size: 1.3125rem;
     }
 
-    #product_info section > div {
+    #product_info section>div {
         width: 100%;
-    }    
+    }
 
     #product_info section:nth-child(1) img,
     #product_info section:nth-child(3) img {
@@ -733,27 +740,27 @@ header hr {
     #product_info section:nth-of-type(2) li:nth-child(2) {
         margin-left: 35px;
     }
-        
+
     .circle_one {
         width: 40px;
         height: 40px;
         font-size: 1.2500rem;
     }
-    
-    #product_info section:nth-child(2) > div {
+
+    #product_info section:nth-child(2)>div {
         margin-left: 0;
         gap: 21px;
     }
 
-    #product_info section > div {
+    #product_info section>div {
         margin-top: 8.5px;
     }
-    
-    body > article:first-of-type>header:first-of-type {
+
+    body>article:first-of-type>header:first-of-type {
         margin-bottom: 60px;
     }
 
-    #product_info > .vector:nth-of-type(1) {
+    #product_info>.vector:nth-of-type(1) {
         top: 53%;
     }
 
@@ -766,6 +773,7 @@ header hr {
         left: 0;
         top: 76%;
     }
+
     #product_info>.vector:nth-of-type(4) {
         right: 0;
         top: 76.7%;
@@ -779,7 +787,7 @@ header hr {
         margin-top: 6px;
     }
 
-    #introductory_content > header {
+    #introductory_content>header {
         margin-bottom: 60px;
     }
 
@@ -805,7 +813,7 @@ header hr {
     display: none;
 }
 
-#product_effect > header {
+#product_effect>header {
     position: relative;
     padding-top: 69px;
 }
@@ -827,18 +835,19 @@ header hr {
     #product_effect {
         display: block;
     }
-    
-    #product_effect > header img.vector:nth-of-type(1) {
+
+    #product_effect>header img.vector:nth-of-type(1) {
         left: 0;
         top: 15%;
     }
+
     body>article:nth-of-type(2)>header img.vector:nth-of-type(2) {
         right: 0;
         top: 27%;
     }
 }
 
-body > article:nth-of-type(3) header {
+body>article:nth-of-type(3) header {
     margin-bottom: 2.5vw;
     padding-top: 40px;
 }
@@ -846,10 +855,10 @@ body > article:nth-of-type(3) header {
 h3 {
     margin-top: max(5.25vw, 60px);
     font-weight: 400;
-    font-size: clamp(13px, 1.62vw, 25px);
+    font-size: clamp(0.8125rem, 1.62vw, 1.5625rem);
 }
 
-body > article:nth-of-type(3) header hr:nth-of-type(2) {
+body>article:nth-of-type(3) header hr:nth-of-type(2) {
     display: none;
 }
 
@@ -861,13 +870,13 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     grid-template-columns: 0.93fr 1.21fr 0.87fr;
     grid-template-rows: 33px 1fr 1fr 1fr;
     grid-template-areas: ".               pic     ."
-                         "siarcz_gluko    pic     czarci_paz"
-                         "siarcz_chond    pic     vit_c"
-                         "kwas_hialur     pic     msm";
+        "siarcz_gluko    pic     czarci_paz"
+        "siarcz_chond    pic     vit_c"
+        "kwas_hialur     pic     msm";
 }
 
 #product_ingredients .buy {
-        width: 136px;
+    width: 136px;
 }
 
 #product_ingredients section:nth-child(1) hr {
@@ -915,7 +924,9 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     display: none;
 }
 
-.left_items , .right_items, .hiden_items {
+.left_items,
+.right_items,
+.hiden_items {
     text-align: center;
 }
 
@@ -934,7 +945,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 
 #product_ingredients div:nth-child(4) {
     position: relative;
-    display:  flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -972,7 +983,8 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 #product_ingredients h4 {
     padding: 0;
     margin: 0;
-    font-size: clamp(19px, 1.63vw, 25px);;
+    font-size: clamp(1.1875rem, 1.63vw, 1.5625rem);
+    ;
     font-weight: 400;
     margin-top: 15px;
 }
@@ -993,7 +1005,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     bottom: 11%;
 }
 
-#product_ingredients > div picture img {
+#product_ingredients>div picture img {
     position: relative;
 }
 
@@ -1004,7 +1016,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     width: 100%;
 }
 
-#graphic_cont > div {
+#graphic_cont>div {
     margin-top: 40px;
     position: relative;
     width: 100%;
@@ -1015,7 +1027,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
 }
 
 @media (min-width: 320px) and (max-width: 415px) {
-    #graphic_cont > div {
+    #graphic_cont>div {
         min-width: 320px;
         max-width: 320px;
         height: auto;
@@ -1024,7 +1036,7 @@ body > article:nth-of-type(3) header hr:nth-of-type(2) {
     }
 }
 
-body > div:first-of-type > div img:not(.vector) {
+body>div:first-of-type>div img:not(.vector) {
     display: block;
     position: relative;
     z-index: 2;
@@ -1032,13 +1044,13 @@ body > div:first-of-type > div img:not(.vector) {
     height: auto;
 }
 
-body > div:first-of-type > div img.vector:nth-child(1) {
+body>div:first-of-type>div img.vector:nth-child(1) {
     width: 30%;
     left: 14.8%;
     top: 36%
 }
 
-body > div:first-of-type > div img.vector:nth-child(2) {
+body>div:first-of-type>div img.vector:nth-child(2) {
     width: 25%;
     right: 6.7%;
     top: 22%
@@ -1058,17 +1070,17 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         grid-template-areas: "pic pic "
-                             "pic pic"
-                             "siarcz_gluko czarci_paz"
-                             "siarcz_chond vit_c"
-                             "kwas_hialur  msm";
+            "pic pic"
+            "siarcz_gluko czarci_paz"
+            "siarcz_chond vit_c"
+            "kwas_hialur  msm";
     }
 
     #product_ingredients section:nth-last-child(-n+4) {
-            margin-right: 0;
+        margin-right: 0;
     }
 
-    #product_ingredients > div:nth-child(4) {
+    #product_ingredients>div:nth-child(4) {
         margin-bottom: 30px;
     }
 
@@ -1089,19 +1101,20 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         flex-direction: column;
         overflow: hidden;
     }
+
     #product_ingredients {
         grid-template-columns: 1fr;
         grid-auto-flow: row;
         grid-template-areas: "pic "
-                             "pic"
-                             "siarcz_gluko"
-                             "siarcz_chond"
-                             "kwas_hialur"
-                             "czarci_paz"
-                             "vit_c"
-                             "msm";
+            "pic"
+            "siarcz_gluko"
+            "siarcz_chond"
+            "kwas_hialur"
+            "czarci_paz"
+            "vit_c"
+            "msm";
     }
-    
+
     #product_ingredients div {
         grid-column: 1;
 
@@ -1111,16 +1124,16 @@ body > div:first-of-type > div img.vector:nth-child(2) {
 @media (min-width: 320px) and (max-width: 415px) {
     #product_ingredients {
         grid-template-areas: "siarcz_gluko"
-                             "czarci_paz"
-                             "siarcz_chond"
-                             "vit_c"
-                             "kwas_hialur"
-                             "msm"
-                             "syrop"
-                             "pic";
-    grid-template-rows: 250px 250px 270px 265px 265px 265px 190px 1fr;
-    justify-items: center;
-    row-gap: 24px;
+            "czarci_paz"
+            "siarcz_chond"
+            "vit_c"
+            "kwas_hialur"
+            "msm"
+            "syrop"
+            "pic";
+        grid-template-rows: 250px 250px 270px 265px 265px 265px 190px 1fr;
+        justify-items: center;
+        row-gap: 24px;
     }
 
     #product_ingredients section {
@@ -1153,17 +1166,18 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     .left_items {
         margin-right: 0;
     }
-    
+
 
     #product_ingredients section:nth-child(1) hr {
         display: none;
     }
 
-    #product_ingredients section img, #product_ingredients section:last-child {
+    #product_ingredients section img,
+    #product_ingredients section:last-child {
         display: flex;
     }
 
-    body > article:nth-of-type(3) > img {
+    body>article:nth-of-type(3)>img {
         transform: translateX(-63px);
     }
 
@@ -1172,29 +1186,29 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         font-size: 0.8125rem;
     }
 
-    body > article:nth-of-type(3) header hr:nth-of-type(2) {
+    body>article:nth-of-type(3) header hr:nth-of-type(2) {
         display: block;
         width: 45%;
     }
 
-    body > article:nth-of-type(3) header {
+    body>article:nth-of-type(3) header {
         position: relative;
         padding-top: 67px;
         margin-bottom: 50px;
     }
 
-    body > article:nth-of-type(3) header h1:nth-child(3) {
+    body>article:nth-of-type(3) header h1:nth-child(3) {
         margin-top: 62px;
         margin-bottom: 12px;
         font-size: 0.8125rem;
     }
 
-    body > article:nth-of-type(3) header img.vector:nth-of-type(1) {
+    body>article:nth-of-type(3) header img.vector:nth-of-type(1) {
         left: 0;
         top: 10%;
     }
-    
-    body > article:nth-of-type(3) header img.vector:nth-of-type(2) {
+
+    body>article:nth-of-type(3) header img.vector:nth-of-type(2) {
         right: 0;
         top: 17%;
     }
@@ -1208,7 +1222,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         margin-top: 0;
     }
 
-    #product_ingredients > div:nth-child(4) {
+    #product_ingredients>div:nth-child(4) {
         margin-bottom: 0;
         width: 320px;
     }
@@ -1228,7 +1242,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     #product_ingredients section:nth-of-type(6) {
         row-gap: 20px;
     }
-        
+
     #product_ingredients section:nth-of-type(4) img.vector:nth-of-type(2) {
         top: 10%;
     }
@@ -1246,7 +1260,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         top: 13%;
         right: 0;
     }
-    
+
     #product_ingredients section:nth-of-type(6) img.vector:nth-of-type(2) {
         top: 4%;
     }
@@ -1271,12 +1285,12 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         transform: scaleX(-1) rotate(-38deg);
     }
 
-    body > div:first-of-type > div img.vector:nth-child(1) {
+    body>div:first-of-type>div img.vector:nth-child(1) {
         left: 2%;
         width: 40%;
     }
 
-    body > div:first-of-type > div img.vector:nth-child(2) {
+    body>div:first-of-type>div img.vector:nth-child(2) {
         right: -8%;
         width: 33%;
 
@@ -1289,7 +1303,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     padding-top: 90px;
     background-color: var(--main-color-one);
     min-height: 200px;
-    display:  flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -1319,7 +1333,8 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     padding-left: 7px;
 }
 
-#select_bar,  #drop_down_list button {
+#select_bar,
+#drop_down_list button {
     box-sizing: border-box;
 }
 
@@ -1343,7 +1358,8 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     font-weight: 600;
 }
 
-#drop_down_list li, #drop_down_list button {
+#drop_down_list li,
+#drop_down_list button {
     width: 100%;
 }
 
@@ -1362,7 +1378,8 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     cursor: pointer;
 }
 
-.button_style_1, .button_style_2:hover {
+.button_style_1,
+.button_style_2:hover {
     background-color: var(--buton-color);
     color: white;
 }
@@ -1408,13 +1425,13 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     #products_list {
         justify-content: center;
         grid-template-columns: repeat(auto-fill, minmax(auto, 220px));
-        grid-auto-rows: minmax(auto, 220px);    
+        grid-auto-rows: minmax(auto, 220px);
     }
 }
 
 
 @media (min-width: 320px) and (max-width: 415px) {
-    #product_ingredients > div:nth-child(4) button{
+    #product_ingredients>div:nth-child(4) button {
         display: none;
     }
 
@@ -1427,14 +1444,15 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     #products_list {
         width: 100%;
         justify-content: space-between;
-        grid-template-columns: repeat(2, minmax(101px, 140px));;
+        grid-template-columns: repeat(2, minmax(101px, 140px));
+        ;
         grid-auto-rows: minmax(101px, 140px);
         column-gap: 47px
     }
-    
+
     .product_item {
         aspect-ratio: 1 / 1;
-    } 
+    }
 
     #select_bar {
         margin-right: 0;
@@ -1445,11 +1463,13 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         align-items: center;
     }
 
-    #select_bar, #drop_down_list button {
+    #select_bar,
+    #drop_down_list button {
         height: 44px;
     }
 
-    #select_bar p, #drop_down_list  {
+    #select_bar p,
+    #drop_down_list {
         font-size: 1.2500rem;
     }
 
@@ -1464,7 +1484,8 @@ body > div:first-of-type > div img.vector:nth-child(2) {
         font-weight: 900;
         transform: translate(-1.5px, 42px);
         left: 0;
-        width: calc(100% + 3px);;
+        width: calc(100% + 3px);
+        ;
     }
 
     #drop_down_list:has(.list_item.show) {
@@ -1501,11 +1522,12 @@ body > div:first-of-type > div img.vector:nth-child(2) {
 }
 
 @media (min-width: 320px) and (max-width: 415px) {
+
     .normal_new_line,
     .normal_vector {
         display: none;
     }
-    
+
     .mobile_new_line {
         display: inline;
     }
