@@ -23,7 +23,7 @@ nav img {
 }
 
 nav ul {
-    font-size: 12.5px;
+    font-size: 0.7812rem;
     font-weight: 500;
     list-style: none;
     padding: 0;
@@ -220,7 +220,7 @@ h1 {
     width: 134px;
     height: 36px;
     font-weight: bold;
-    font-size: 14.4px;
+    font-size: 0.9000rem;
     background-color: #30AB4C;
     border: none;
 }
@@ -408,7 +408,7 @@ header hr {
 #product_info h4 {
     padding: 0;
     margin: 0;
-    font-size: 24.3px;
+    font-size: 1.5188rem;
     font-weight: 500;
 }
 
@@ -421,7 +421,7 @@ header hr {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    font-size: 16px;
+    font-size: 1.0000rem;
     font-weight: bold;
     margin-left: 21.5px;
     box-shadow: 0px 1px 9px rgba(0, 0, 0, 0.25);
@@ -502,7 +502,7 @@ header hr {
 }
 
 #product_info section p {
-    font-size: 16px;
+    font-size: 1.0000rem;
     font-weight: 300;
     width: 77%;
     margin-top: 10px;
@@ -655,7 +655,7 @@ header hr {
     #product_info ol, 
     #product_effect ol {
         font-weight: 100;
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     #product_info ol {
@@ -682,7 +682,7 @@ header hr {
 
     #product_info section p, #product_intro div div p:nth-child(2) {
         margin: 0 0;
-        font-size: 13px;
+        font-size: 0.8125rem;
         font-weight: 300;
         width: 80%;
         margin-right: 9px;
@@ -708,7 +708,7 @@ header hr {
     }
 
     #product_info section > h4 {
-        font-size: 21px;
+        font-size: 1.3125rem;
     }
 
     #product_info section > div {
@@ -732,7 +732,7 @@ header hr {
     .circle_one {
         width: 40px;
         height: 40px;
-        font-size: 20px;
+        font-size: 1.2500rem;
     }
     
     #product_info section:nth-child(2) > div {
@@ -1164,7 +1164,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
 
     #product_ingredients p {
         margin: 0;
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     body > article:nth-of-type(3) header hr:nth-of-type(2) {
@@ -1181,7 +1181,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     body > article:nth-of-type(3) header h1:nth-child(3) {
         margin-top: 62px;
         margin-bottom: 12px;
-        font-size: 13px;
+        font-size: 0.8125rem;
     }
 
     body > article:nth-of-type(3) header img.vector:nth-of-type(1) {
@@ -1199,7 +1199,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     #product_ingredients h4 {
-        font-size: 20.5px;
+        font-size: 1.2812rem;
         margin-top: 0;
     }
 
@@ -1396,7 +1396,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     row-gap: 30px;
     column-gap: 37px;
     justify-content: center;
-    font-size: 25px;
+    font-size: 1.5625rem;
 }
 
 @media (max-width: 1400px) {
@@ -1445,7 +1445,7 @@ body > div:first-of-type > div img.vector:nth-child(2) {
     }
 
     #select_bar p, #drop_down_list  {
-        font-size: 20px;
+        font-size: 1.2500rem;
     }
 
     #select_bar p {

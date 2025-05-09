@@ -14,7 +14,7 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
-#product_modal > div:first-child {
+#product_modal>div:first-child {
     margin: 15% auto;
     display: flex;
     flex-direction: column;
@@ -50,7 +50,7 @@
     list-style: none;
     gap: 20px;
     align-items: center;
-    font-size: 13px;
+    font-size: 0.8125rem;
 }
 
 #mobile_menu_modal a {
@@ -67,13 +67,13 @@
 }
 
 @media (min-width: 320px) and (max-width: 415px) {
-    #product_modal > div:first-child {
+    #product_modal>div:first-child {
         margin: 50% auto;
     }
 }
 
 #product_modal p {
-    font-size: 20px;
+    font-size: 1.2500rem;
     padding: 0;
     margin: 0;
 }
@@ -85,7 +85,7 @@
 
 .close {
     color: black;
-    font-size: 14px;
+    font-size: 0.8750rem;
     font-weight: bold;
     padding-right: 10px;
 }
